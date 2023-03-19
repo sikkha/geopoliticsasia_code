@@ -1,0 +1,45 @@
+digraph Dilemma {
+  label = "Dilemma: Managing Public Health Crisis";
+  labelloc = "t";
+  fontsize = 10;
+  fontname = "Helvetica";
+  splines = "polyline";
+  node [fontsize = 10, fontname = "Helvetica", shape = "Mrecord", width = 1.5];
+  edge [fontsize = 10, fontname = "Helvetica", labelfloat = "true", arrowhead = "normal", color = black];
+
+  "PublicHealthCrisis" [label = "Public Health Crisis"];
+  "GovernmentResponse" [label = "Government Response", orientation=44, skew="0.053841", color=lightskyblue1, style=filled];
+  "StrongMeasures" [label = "Strong Measures\n(Lockdowns, Enforced Vaccinations)"];
+  "WeakerMeasures" [label = "Weaker Measures"];
+  "HealthImpactStrong" [label = "Fewer deaths"];
+  "HealthImpactWeak" [label = "More deaths"];
+  "EconomicImpactStrong" [label = "Sacrifice on economic performance"];
+  "EconomicImpactWeak" [label = "Better economic revival"];
+  "SacrificingFoS" [label = "Sacrificing Freedom\nof Speech and\nCitizen Rights"];
+
+  "PublicHealthCrisis" -> "GovernmentResponse" [label = "   Responds to"];
+  "GovernmentResponse" -> "StrongMeasures" [label = " Enforces"];
+  "GovernmentResponse" -> "WeakerMeasures" [label = " Enforces"];
+  "StrongMeasures" -> "HealthImpactStrong" [label = " Leads to"];
+  "StrongMeasures" -> "EconomicImpactStrong" [label = " Leads to"];
+  "StrongMeasures" -> "SacrificingFoS" [label =  " Leads to"];
+  "WeakerMeasures" -> "HealthImpactWeak" [label = " Leads to"];
+  "WeakerMeasures" -> "EconomicImpactWeak" [label = " Leads to"];
+
+  subgraph cluster_0 {
+      label = "Dilemma";
+      labeljust = "l";
+      fontsize = 10;
+      fontname = "Helvetica";
+      color = "black";
+      style = "dashed";
+
+      "StrongMeasures";
+      "WeakerMeasures";
+  }
+}
+
+
+
+
+
