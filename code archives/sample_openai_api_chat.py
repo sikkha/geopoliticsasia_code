@@ -17,7 +17,8 @@ def ask_gpt(prompt):
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
-        api_key="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"
+        api_key="YOUROWNOPENAIAPI" 
+	#replace your own openai api in the api_key above, it's better to set it in the OpenAI API key system shell variable
     )
     message = response.choices[0].text.strip()
     return re.sub('[^0-9a-zA-Z\n\.\?,!]+', ' ', message)
