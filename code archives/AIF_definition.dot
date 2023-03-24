@@ -11,7 +11,7 @@ digraph G {
         style=dotted;
         color=gray;
         LLM -> RR;
-        LLM -> R;
+        R -> LLM;
     }
 
     subgraph cluster_RR {
@@ -27,4 +27,3 @@ digraph G {
         color=gray;
     }
 }
-
