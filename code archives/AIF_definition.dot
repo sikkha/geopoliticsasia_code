@@ -1,0 +1,30 @@
+digraph G {
+    rankdir=TB;
+   fontsize = 10;
+   fontname = "Helvetica";
+
+    node[shape=box, style=rounded, fontname=Helvetica, fontsize=10];
+    edge[arrowhead=vee, arrowsize=0.5, fontname=Helvetica, fontsize=10];
+
+    subgraph cluster_LLM {
+        label="LLM (Thoughts, Mental Models, or Algorithms)";
+        style=dotted;
+        color=gray;
+        LLM -> RR;
+        LLM -> R;
+    }
+
+    subgraph cluster_RR {
+        label="RR (Translation of LLM into Actions)";
+        style=dotted;
+        color=gray;
+        RR -> R;
+    }
+
+    subgraph cluster_R {
+        label="R (External Reality)";
+        style=dotted;
+        color=gray;
+    }
+}
+
