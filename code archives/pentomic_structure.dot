@@ -1,0 +1,40 @@
+digraph G {
+    label="Mission-Driven Pentomic Structure";
+    rankdir=TB;
+
+  labelloc = "t";
+  fontsize = 10;
+  fontname = "Helvetica";
+  splines = "polyline";
+  node [fontsize = 10, fontname = "Helvetica", shape = "Mrecord", width = 1.5];
+  edge [fontsize = 10, fontname = "Helvetica", labelfloat = "true", arrowhead = "normal", color = black];
+
+
+    // Founders
+    Founders [label="Founders\n(Team 1 & Team 2 Leadership)"];
+
+    // Teams
+    Team1 [label="Team 1\n(Product Development)"];
+    Team2 [label="Team 2\n(Engineering)"];
+    Team3 [label="Team 3\n(Data Science)"];
+    Team4 [label="Team 4\n(Sales & Customer Success)"];
+
+    // Outsourced Functions
+    Legal [label="Legal\n(Outsourced)"];
+    Marketing [label="Marketing\n(Outsourced)"];
+    HR [label="HR\n(Outsourced)"];
+    Accounting [label="Accounting\n(Outsourced)"];
+
+    // Relationships
+    Founders -> Team1;
+    Founders -> Team2;
+    Founders -> Team3;
+    Founders -> Team4;
+
+    Founders -> Legal [style=dashed];
+    Founders -> Marketing [style=dashed];
+    Founders -> HR [style=dashed];
+    Founders -> Accounting [style=dashed];
+}
+
+
