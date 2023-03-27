@@ -1,0 +1,16 @@
+digraph hierarchy {
+rankdir = TB; // top to bottom direction
+  fontsize = 10;
+  fontname = "Helvetica";
+  splines = "polyline";
+  node [fontsize = 10, fontname = "Helvetica", shape = "Mrecord", width = 1.5];
+  edge [fontsize = 10, fontname = "Helvetica", labelfloat = "true", arrowhead = "normal", color = black];
+
+subgraph cluster_0 { // create a subgraph for the levels
+label = "AI-Driven Agile Organizational Structure";
+Apex_Leadership -> Senior_Adaptive_Team_Strategist;
+Senior_Adaptive_Team_Strategist -> Adaptive_Team_Strategist;
+Adaptive_Team_Strategist -> Fellow_Craft;
+Fellow_Craft -> Apprentice;
+}
+}
