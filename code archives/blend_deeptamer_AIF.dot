@@ -1,0 +1,39 @@
+digraph Blended_Concept {
+    rankdir=TB;
+    fontsize = 10;
+    fontname = "Helvetica";
+    
+    node[shape=box, style=rounded, fontname=Helvetica, fontsize=10];
+    edge[arrowhead=vee, arrowsize=0.5, fontname=Helvetica, fontsize=10];
+    
+    subgraph cluster_LLM {
+        label="LLM (Thoughts, Mental Models, or Algorithms)";
+        style=dotted;
+        color=gray;
+        LLM -> RR [label="Translates mental models into actions"];
+        R -> LLM [label="Provides feedback to update mental models"];
+        
+        subgraph cluster_TAMER {
+            label="Deep TAMER Algorithm";
+            style=dotted;
+            color=gray;
+            
+            Agent -> Environment [label="Observes state and executes action"];
+            Environment -> Agent [label="Provides feedback in the form of reward signals"];
+            Agent -> Memory [label="Stores transitions for experience replay"];
+            Memory -> Trainer [label="Samples mini-batch for SGD update"];
+            Trainer -> Hk_1 [label="Updates policy using SGD update (3)"];
+            Hk_1 -> Agent [label="Sends updated policy to agent"];
+            
+            RR -> Agent [style=dashed, label="Uses learned policy to interact with environment"];
+        }
+    }
+    
+    subgraph cluster_R {
+        label="R (External Reality)";
+        
+        Environment -> R [style=dashed, label="Generates state observations and rewards"];
+        
+        RR -> Environment [style=dashed, label="Translates actions into changes in external reality"];
+    }
+}
