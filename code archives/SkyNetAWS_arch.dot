@@ -1,0 +1,51 @@
+digraph AWSComponents {
+    rankdir=LR;
+    node [shape=rectangle, style=filled, color=lightskyblue];
+
+
+  labelloc = "t";
+  fontsize = 10;
+  fontname = "Helvetica";
+  splines = "polyline";
+  node [fontsize = 10, fontname = "Helvetica", shape = "Mrecord", width = 1.5];
+  edge [fontsize = 10, fontname = "Helvetica", labelfloat = "true", arrowhead = "normal", color = black];
+
+    lambda [label="AWS Lambda"];
+    apigateway [label="Amazon API Gateway"];
+    s3 [label="Amazon S3"];
+    rds [label="Amazon RDS"];
+    ec2 [label="Amazon EC2"];
+    eb [label="AWS Elastic Beanstalk"];
+    sagemaker [label="Amazon SageMaker"];
+    comprehend [label="Amazon Comprehend"];
+    rekognition [label="Amazon Rekognition"];
+    polly [label="Amazon Polly"];
+    lex [label="Amazon Lex"];
+    stepfunctions [label="AWS Step Functions"];
+    glue [label="AWS Glue"];
+    neptune [label="Amazon Neptune"];
+    kendra [label="Amazon Kendra"];
+    iam [label="AWS IAM"];
+
+    {
+        rank=same;
+        lambda -> apigateway -> s3;
+    }
+    {
+        rank=same;
+        rds -> ec2 -> eb;
+    }
+    {
+        rank=same;
+        sagemaker -> comprehend -> rekognition -> polly -> lex;
+    }
+    {
+        rank=same;
+        stepfunctions -> glue -> neptune -> kendra;
+    }
+    s3 -> rds [style=invis];
+    ec2 -> sagemaker [style=invis];
+    rekognition -> stepfunctions [style=invis];
+    kendra -> iam [style=invis];
+
+}
